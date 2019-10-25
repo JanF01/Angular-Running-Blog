@@ -12,10 +12,12 @@ import { AboutComponent } from './main/content/about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { CalendaryComponent } from './calendary/calendary.component';
 import { MainComponent } from './main/main.component';
+import { GoalsComponent } from './goals/goals.component';
 
 
 const appRoutes: Routes = [
  { path: 'kalendarz', component: CalendaryComponent },
+ { path: 'cele', component: GoalsComponent },
  { path: '', component: MainComponent },
 ];
 
@@ -32,6 +34,7 @@ const appRoutes: Routes = [
     FooterComponent,
     CalendaryComponent,
     MainComponent,
+    GoalsComponent,
   ],
   imports: [
     BrowserModule,

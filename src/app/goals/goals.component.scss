@@ -1,0 +1,78 @@
+main{
+    background:linear-gradient(to right, #052fe4,#041faf);
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.goal,.right,.left,.bottom{
+    color:white;
+  font-family:'Lato';
+}
+.goal{
+    font-size:1.1em;
+  text-decoration:underline;
+  text-decoration-color:rgb(73, 101, 230);
+
+  span{
+    font-family:'Graduate';
+ }
+}
+
+h3{
+    font-size:0.7em;
+    text-align:center;
+     margin:0.9em 0.4em 0 0;
+     font-weight:light;
+}
+
+.right,.left{
+    position:absolute;
+    right:1em;
+    top:47.5vh;
+    width:8em;
+    display:flex;
+    transition:all 0.2s;
+
+    img{
+        display:block;
+        width:2em;
+        height:2.2em;
+        
+    }
+
+}
+.left{
+    left:2em;
+    
+    img{
+        transform:rotate(180deg);
+        opacity:0.6;
+    }
+    h3{
+        margin:0.9em 0em 0 0.4em;
+    
+    }
+    &:hover{
+        left:1.6em;
+        cursor:pointer;
+    }
+}
+
+    .right:hover{
+        right:0.6em;
+        cursor:pointer;
+    }
+
+.bottom{
+    position:absolute;
+    top:90vh;
+    left:47.25%;
+    transition:all 0.2s;
+    &:hover{
+        cursor:pointer;
+        text-shadow:0.1em 0.1em 0.5em rgb(90, 231, 201);
+    }
+}
+

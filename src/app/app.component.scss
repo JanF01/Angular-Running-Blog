@@ -1,6 +1,6 @@
 
 ul{
-    position:fixed;
+    position:absolute;
     top:0;
     left:0;
     display:flex;
@@ -8,7 +8,7 @@ ul{
     list-style-type:none;
     color:white;
     justify-content:flex-start;
-    width:100%;
+    width:calc( 100% - 2em);
     height:2em;
     z-index:2;
     padding:1em;
@@ -46,6 +46,10 @@ li{
             transform:scale(0.95);
         }
     }
+    a{
+        color:white;
+        text-decoration:none;
+    }
 }
 
 .logo:hover{
@@ -74,4 +78,10 @@ input{
    position:absolute;
    top:1em;
    right:3.5em; 
+}
+.uparrow{
+  position:fixed;
+  top:10%;
+  left:0.5em;
+width:3em;
 }
