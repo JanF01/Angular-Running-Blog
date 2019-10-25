@@ -1,0 +1,50 @@
+footer{
+   
+    padding:1em 3em 0em 3em;
+min-height:12em;
+background:linear-gradient(to right, #052fe4,#041faf);
+width:calc( 100% - 6em );
+text-align:center;
+font-size:0.9em;
+}
+.links{
+    width:100%;
+    display:flex;
+    justify-content:center;
+.menu{
+    width:10em;
+    color:white;
+    font-family:'Roboto';
+    display:flex;
+    flex-direction:column;
+    line-height:1.8em;
+    a{
+        color:white;
+        text-decoration:none;
+    }
+  
+ 
+
+}
+.info{
+    width:10em;
+    a{
+        font-family:'Roboto';
+        color:white;
+        text-decoration:none; 
+        display:flex;
+        flex-direction:column;
+        line-height:1.8em;
+    }
+}
+
+}
+.description{
+    font-family:'Roboto';
+    color:white;
+    text-decoration:none; 
+    margin-top:2em;
+    font-size:0.9em;
+}
+
+

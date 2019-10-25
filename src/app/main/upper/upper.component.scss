@@ -1,0 +1,47 @@
+.blue{
+min-height:75vh;
+margin-top:-20vh;
+width:100%;
+background:linear-gradient(to right, #052fe4,#041faf);
+transform:skewY(7deg);
+box-shadow: inset 0 -0.1em 0.3em -0.1em rgb(182, 182, 182);
+z-index:5;
+}
+.line{
+    background:linear-gradient(to right,rgba(230, 6, 6, 0.89),rgba(239, 236, 255, 0.89));
+    height:0.15em;
+    width:90%;
+    margin-left:5%;
+    transform:skewY(7deg);
+    margin-top:-2%;
+   font-family:'Righteous';
+   color:white;
+   font-size:1.1em;
+}
+span{
+    margin-top:-1.2em;
+}
+span:nth-child(2){
+    float:right;
+}
+h1{
+    z-index:5;
+   width:45%;
+   text-align:left;
+   margin-left:55%;
+   color:rgb(255, 255, 255);
+
+   font-family:'Righteous';
+   position:absolute;
+   text-shadow: 0.05em 0.05em 0em rgba(255, 255, 255, 0.5);
+   
+   top:15%;
+   font-size:3.5em;
+}
+
+app-navigation{
+    background:linear-gradient(to right, #052fe4,#041faf);
+    height:2em;
+    width:100%;
+    z-index:10;
+}

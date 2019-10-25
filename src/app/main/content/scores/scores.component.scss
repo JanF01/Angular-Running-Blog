@@ -1,0 +1,75 @@
+h1,h2,.pb{
+    font-family:"Graduate";
+    font-size:1.6em;
+}
+h1>span{
+    color:rgba(0, 104, 73,1);
+    animation: blink infinite 0.9s; 
+}
+.label,.pb{
+    background:radial-gradient(#392de4,#ffffff 210%);
+    width:40%;
+    padding:0.6em 0em 0.6em 0em;
+    text-align:center;
+    margin:0;
+}
+.pb{
+    margin:0;
+    position:relative;
+}
+.g{
+    background:radial-gradient(#68e072,#ffffff 210%);
+}
+.y{
+    background:radial-gradient(#dee068,#ffffff 210%);
+}
+.o{
+    background:radial-gradient(#e6a23d,#ffffff 210%);
+}
+.r{
+    background:radial-gradient(#e6563d,#ffffff 210%);
+}
+.asi{
+  position:absolute;
+  right:7%;
+  top:28%;
+  font-size:0.4em;
+  width:6em;
+  text-align:center;
+}
+@keyframes blink{
+   0%{
+    color:rgba(0, 104, 73,1);
+   }
+   50%{
+    color:rgba(0, 104, 73,0.3);
+   }
+   100%{
+    color:rgba(0, 104, 73,1);
+   }
+
+
+}
+
+
+@media only screen and (max-width:1200px){
+       
+    .label,.pb{
+        width:55%;
+    }
+
+}
+@media only screen and (max-width:900px){
+       
+    .label,.pb{
+        width:65%;
+    }
+
+}
+@media only screen and (max-width:700px){
+       
+    .label,.pb{
+        width:100%;
+    }
+
+}
