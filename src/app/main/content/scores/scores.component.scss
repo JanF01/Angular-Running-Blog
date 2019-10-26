@@ -35,7 +35,11 @@ h1>span{
   top:28%;
   font-size:0.4em;
   width:6em;
+  height:100%;
   text-align:center;
+  &:hover{
+    cursor:pointer;
+}
 }
 @keyframes blink{
    0%{

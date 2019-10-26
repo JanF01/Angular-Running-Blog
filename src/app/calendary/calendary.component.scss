@@ -21,20 +21,70 @@ main{
   box-shadow:0em 0.1em 0em 0.1em #120994;
   color:white;
   font-family:"Lato";
+  position:relative;
+  .info{
+      text-align:center;
+      word-spacing:5em;
+      padding-top:0.7em;
+    // font-family:"Graduate";
+      display:block;
+      position:absolute;
+      top:0;
+      left:0;
+      min-width:100%;
+      min-height:calc(100% - 0.7em);
+      background:linear-gradient(to top, #2513ca,#26098d);
+      box-shadow:0em 0.1em 0em 0.1em #120994;
+      display:none;
+      h1{
+          font-size:1.8em;
+          font-family:"Graduate";
+      }
+      h2{
+        font-size:1.1em;
+      }
+  }
+  &:hover{
+      cursor:pointer;
+      .info{
+          opacity:1;
+          display:block;
+          animation:fadeIn 1 0.3s;
+      }
+  }
 }
+
+@keyframes fadeIn{
+0%{
+    opacity:0;
+}
+100%{
+    opacity:1;
+}
+
+}
+
 .race{
     background:linear-gradient(to top, #ee1212,#aa1212);
     box-shadow:0em 0.1em 0em 0.1em #a80606;
+    .info{
+        background:linear-gradient(to top, #ee1212,#aa1212);
+        box-shadow:0em 0.1em 0em 0.1em #a80606;
+    }
 }
 .recov{
     background:linear-gradient(to top, #64b91e,#2c6902);
     box-shadow:0em 0.1em 0em 0.1em #058a05;
+    .info{
+        background:linear-gradient(to top, #64b91e,#2c6902);
+        box-shadow:0em 0.1em 0em 0.1em #058a05;
+    }
 }
-.day h1{
+.day h1,.info h1{
     font-size:2.2em;
     text-align:center;
 }
-.day h2{
+.day h2,.info h2{
     font-size:1.1em;
     text-align:center;
 }

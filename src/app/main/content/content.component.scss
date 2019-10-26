@@ -5,8 +5,15 @@ app-scores{
   align-items:center;
   flex-direction:column;
   background:rgb(255, 255, 255);
+  padding-bottom:3em;
 }
 app-about{
-  margin-top:2.3em;
+  width:100%;
+}
+hr{
+  border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   width:100%;
 }

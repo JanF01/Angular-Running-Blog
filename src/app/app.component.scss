@@ -21,12 +21,6 @@ ul{
 li{
     position:relative;
     font-size:0.9em;
-    display:flex;
-    padding:1% 0 1% 0;
-    padding-left:2.5%;
-    padding-right:2.5%;
-    align-items:center;
-    justify-content:center;
     font-family:'Roboto';
    cursor:pointer;
    transition:0.2s all;
@@ -46,10 +40,18 @@ li{
             transform:scale(0.95);
         }
     }
+    &:nth-child(2){
+        margin-left:1em;
+    }
     a{
         color:white;
         text-decoration:none;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:1.2em 2.7em 1.2em 2.7em;
     }
+    
 }
 
 .logo:hover{

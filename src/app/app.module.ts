@@ -13,11 +13,13 @@ import { FooterComponent } from './footer/footer.component';
 import { CalendaryComponent } from './calendary/calendary.component';
 import { MainComponent } from './main/main.component';
 import { GoalsComponent } from './goals/goals.component';
+import { RacesComponent } from './races/races.component';
 
 
 const appRoutes: Routes = [
  { path: 'kalendarz', component: CalendaryComponent },
  { path: 'cele', component: GoalsComponent },
+ { path: 'zawody', component: RacesComponent },
  { path: '', component: MainComponent },
 ];
 
@@ -35,6 +37,7 @@ const appRoutes: Routes = [
     CalendaryComponent,
     MainComponent,
     GoalsComponent,
+    RacesComponent,
   ],
   imports: [
     BrowserModule,
