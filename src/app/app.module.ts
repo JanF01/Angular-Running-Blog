@@ -14,6 +14,17 @@ import { CalendaryComponent } from './calendary/calendary.component';
 import { MainComponent } from './main/main.component';
 import { GoalsComponent } from './goals/goals.component';
 import { RacesComponent } from './races/races.component';
+import { ViewComponent } from './view/view.component';
+import { WordpressService } from './wordpress.service';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule, MatCardModule, MatButtonModule } from '@angular/material';
+
+const materialModules = [
+  MatToolbarModule,
+  MatCardModule,
+  MatButtonModule,
+];
 
 
 const appRoutes: Routes = [
@@ -21,6 +32,7 @@ const appRoutes: Routes = [
  { path: 'cele', component: GoalsComponent },
  { path: 'zawody', component: RacesComponent },
  { path: '', component: MainComponent },
+ { path:'view', component: ViewComponent}
 ];
 
 
@@ -38,15 +50,22 @@ const appRoutes: Routes = [
     MainComponent,
     GoalsComponent,
     RacesComponent,
+    ViewComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(
       appRoutes,
-    )
+    ),
+    HttpClientModule,
+    NoopAnimationsModule,
+    materialModules
   ],
-  providers: [],
+  providers: [WordpressService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

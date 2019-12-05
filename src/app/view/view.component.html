@@ -1,0 +1,21 @@
+<nav>
+    <div class="left"><img src="left" src="assets/arrow2.png"><h3>POPRZEDNI TRENING</h3></div>
+    <div class="menu" (click)="goBack();">POWRÓT DO MENU</div>
+    <div class="right"><h3>NASTĘPNY TRENING</h3> <img src="assets/arrow2.png"></div>
+    
+    
+    
+    
+    </nav>
+    <main *ngFor="let post of this.posts | async">
+        <h2>{{ post.title.render }}</h2>
+        <h3>{{ post.date_gmt | date }}</h3>
+        <hr>
+       <p [innerHTML]="post.excerpt.rendered" >Pętla 2,4KM, żeby rozpoznać okolicę. Troszkę deszczowo. Długa prosta uliczka, idealna na bieganie. Najpewniej będę biegał parę razy tą pętlę.
+          W planie 4x7KM + 12KM w sobotę. Kolacja za 7€ w Niemczech, sznycel z frytkami. Ceny w niemczech wysokie kawa 25zł za 500g. 
+          Jutro będziemy zwiedzać szkołę w Mainz oraz firmę produkującą szkło techniczne.
+       </p>
+       <mat-card-actions align="start">
+         <a mat-button [href]="post.link">View</a>
+       </mat-card-actions>
+    </main>
