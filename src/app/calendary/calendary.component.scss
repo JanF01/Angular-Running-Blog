@@ -12,6 +12,7 @@ main{
     padding:5% 15% 5% 15%;
     flex-wrap:wrap;
     @include flex;
+    justify-content: flex-start;
 }
 .day{
   min-width:6.6em;
@@ -22,6 +23,7 @@ main{
   color:white;
   font-family:"Lato";
   position:relative;
+  z-index:1;
   .info{
       text-align:center;
       word-spacing:5em;
@@ -33,8 +35,7 @@ main{
       left:0;
       min-width:100%;
       min-height:calc(100% - 0.7em);
-      background:linear-gradient(to top, #2513ca,#26098d);
-      box-shadow:0em 0.1em 0em 0.1em #120994;
+      background:transparent;
       display:none;
       h1{
           font-size:1.8em;
@@ -42,11 +43,14 @@ main{
       }
       h2{
         font-size:1.1em;
+        margin-top:4em;
       }
   }
   &:hover{
+      color:transparent;
       cursor:pointer;
       .info{
+          color:white;
           opacity:1;
           display:block;
           animation:fadeIn 1 0.3s;
@@ -67,18 +71,10 @@ main{
 .race{
     background:linear-gradient(to top, #ee1212,#aa1212);
     box-shadow:0em 0.1em 0em 0.1em #a80606;
-    .info{
-        background:linear-gradient(to top, #ee1212,#aa1212);
-        box-shadow:0em 0.1em 0em 0.1em #a80606;
-    }
 }
 .recov{
     background:linear-gradient(to top, #64b91e,#2c6902);
     box-shadow:0em 0.1em 0em 0.1em #058a05;
-    .info{
-        background:linear-gradient(to top, #64b91e,#2c6902);
-        box-shadow:0em 0.1em 0em 0.1em #058a05;
-    }
 }
 .day h1,.info h1{
     font-size:2.2em;

@@ -19,6 +19,7 @@ import { WordpressService } from './wordpress.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatCardModule, MatButtonModule } from '@angular/material';
+import { Observable } from 'rxjs';
 
 const materialModules = [
   MatToolbarModule,
@@ -56,9 +57,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(
-      appRoutes,
-    ),
+    RouterModule.forRoot(appRoutes,{useHash:true}),
     HttpClientModule,
     NoopAnimationsModule,
     materialModules
@@ -68,4 +67,10 @@ const appRoutes: Routes = [
 })
 export class AppModule { 
   
+
+
+  constructor(private wp: WordpressService) { 
+    this.wp.getPosts();
+    this.wp.getTags();
+  }
 }

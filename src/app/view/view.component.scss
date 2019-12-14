@@ -12,10 +12,6 @@ nav{
     text-align:center;
 }
 
-main{
-    margin-top:4em;
-    margin-bottom:80vh;
-}
 
 .left img, .right img{
     margin-top:0.25em;
@@ -75,36 +71,73 @@ h3{
         background:rgba(230,240,255,0.2);
     }
 }
-
+.container{
+   display:flex;
+   width:auto;
+   position:relative;
+right:0%;
+ transition:all 0.8s;
+}
 main{
     font-family:'Lato';
     font-weight:light;
-    width:38em;
+    min-width:100%;
     margin:0 auto;
-    min-height:95vh;
     display:flex;
     align-items:center;
-    justify-content:center;
+    justify-content:flex-start;
     flex-direction:column;
+    margin:7em 0 10vh 0;
 
     h2{
-        margin-top:-3em;
-       font-size:1.05em;
+       font-size:1.5em;
+       padding-bottom:0.5em;
        width:100%;
-       text-align:left;  
+       text-align:center;  
     }
+
     h3{
         width:100%;
-        text-align:left;
+        text-align:center;
         font-size:0.8em;
+        margin-right:1.4em;
+        padding-bottom:1em;
         margin-top:-0.4em;
         line-height:1.2em;
     }
+    .content{
+        width:100%;
+        background:#b5c3ff;
+        padding-top:0.5em;
+        padding-bottom:3em;
+        text-align:center;
+    }
     p{
         text-align:justify;
-        padding:0.2em 1.4em 0em 1.4em;
         line-height:1.5em;
+        width:38em;
+        padding-top:0.2em;
+        margin:0 auto;
+  
     }
+
+    .distance{
+        margin-top:2.5em;
+    }
+    h5{
+        display:flex;
+        align-items:center;
+       margin-top:4em;
+        margin:0 auto;
+        width:47em;
+    }
+    h5>img{
+        padding-right:1em;
+        align-items:flex-start;
+    }
+}
+figure>img{
+    max-width:400px !important;
 }
 hr{
     border: 0;

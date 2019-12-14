@@ -8,15 +8,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class WordpressService {
 
-
+  posts: Observable<any[]>;
+  tags: Observable<any[]>;
 
   constructor(private http: HttpClient) { }
 
-  getPosts(): Observable<any[]>{
-  return this.http.get<any[]>('http://localhost/wordpress/wp-json/wp/v2/posts?_embed', {
+  getPosts(){
+   this.posts =  this.http.get<any[]>('http://localhost/wordpress/wp-json/wp/v2/posts?_embed', {
     params: {
       per_page: '6'
     }
   });
+}
+  getTags(){
+    this.tags = this.http.get<any[]>('http://localhost/wordpress/wp-json/wp/v2/tags');
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ɵɵresolveBody } from '@angular/core';
 import { WordpressService } from '../wordpress.service';
 import { Observable } from 'rxjs';
 
@@ -8,19 +8,33 @@ import { Observable } from 'rxjs';
   styleUrls: ['./view.component.scss']
 })
 export class ViewComponent implements OnInit {
+ 
 
-  posts: Observable<any[]>;
-
-  constructor(private wp: WordpressService) { 
-    this.posts = this.wp.getPosts();
+   posts: Observable<any[]>;
+   tags: Observable<any[]>;
+   active: number = 0;
+  constructor(private wp: WordpressService){ 
+      
   }
 
   ngOnInit() {
-
+     this.posts = this.wp.posts;
+     this.tags = this.wp.tags;
   }
 
   goBack(){
      history.back();
 
+  }
+
+  changePost(b){
+     if(!b && this.active<=(<HTMLElement>document.getElementsByClassName("container")[0]).offsetWidth/document.body.offsetWidth){
+        this.active++;
+     (<HTMLElement>document.getElementsByClassName("container")[0]).style.right="calc( 100% * "+this.active+" )";
+     }
+     else if(b && this.active>0){
+        this.active--;
+     (<HTMLElement>document.getElementsByClassName("container")[0]).style.right="calc( 100% * "+this.active+" )";
+     }
   }
 }

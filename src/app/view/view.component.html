@@ -1,21 +1,27 @@
 <nav>
-    <div class="left"><img src="left" src="assets/arrow2.png"><h3>POPRZEDNI TRENING</h3></div>
+    <div class="left" (click)="changePost(1)"><img src="left" src="assets/arrow2.png" ><h3>NOWSZY TRENING</h3></div>
     <div class="menu" (click)="goBack();">POWRÓT DO MENU</div>
-    <div class="right"><h3>NASTĘPNY TRENING</h3> <img src="assets/arrow2.png"></div>
+    <div class="right" (click)="changePost(0)"><h3>POPRZEDNI TRENING</h3> <img src="assets/arrow2.png"></div>
     
     
     
     
     </nav>
-    <main *ngFor="let post of this.posts | async">
-        <h2>{{ post.title.render }}</h2>
+    <div class="container">
+    <main *ngFor="let post of this.posts | async; let y = index; let l = count">
+        <h2>{{ post.title.rendered }}</h2>
         <h3>{{ post.date_gmt | date }}</h3>
         <hr>
-       <p [innerHTML]="post.excerpt.rendered" >Pętla 2,4KM, żeby rozpoznać okolicę. Troszkę deszczowo. Długa prosta uliczka, idealna na bieganie. Najpewniej będę biegał parę razy tą pętlę.
+        <div class="content">
+       <p [innerHTML]="post.content.rendered" >Pętla 2,4KM, żeby rozpoznać okolicę. Troszkę deszczowo. Długa prosta uliczka, idealna na bieganie. Najpewniej będę biegał parę razy tą pętlę.
           W planie 4x7KM + 12KM w sobotę. Kolacja za 7€ w Niemczech, sznycel z frytkami. Ceny w niemczech wysokie kawa 25zł za 500g. 
           Jutro będziemy zwiedzać szkołę w Mainz oraz firmę produkującą szkło techniczne.
        </p>
-       <mat-card-actions align="start">
-         <a mat-button [href]="post.link">View</a>
-       </mat-card-actions>
+       <div class="distance" *ngFor="let tag of this.tags | async; let i = index">
+         <h4 *ngIf="tag.id==post.tags[0]">Dystans: {{ tag.name }}KM</h4>
+         <h5 *ngIf="tag.id==post.tags[1]"><img src="assets/running.png" width="40"> Wysiłek: {{tag.name}}</h5>
+         </div>
+      </div>
+      
     </main>
+   </div>

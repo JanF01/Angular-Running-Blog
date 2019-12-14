@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { WordpressService } from '../../wordpress.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-posts',
@@ -9,9 +10,13 @@ import { WordpressService } from '../../wordpress.service';
 })
 export class PostsComponent implements OnInit {
   
-  
+  posts: Observable<any>;
+  tags: Observable<any>
 
-  constructor(private wp: WordpressService) { }
+  constructor(private wp: WordpressService) {
+     this.posts = this.wp.posts;
+     this.tags = this.wp.tags;
+   }
 
   ngOnInit() {
   }

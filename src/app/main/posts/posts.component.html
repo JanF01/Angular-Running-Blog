@@ -1,46 +1,16 @@
-<div class="post">
-<header>
-    <h1>6K</h1>
-    <h2>28:19</h2>
+<div class="post" *ngFor="let post of this.posts | async">
+<header *ngFor="let tag of this.tags | async">
+    <h1 *ngIf="tag.id==post.tags[0]">{{tag.name}}KM</h1>
+    <h2 *ngIf="tag.id==post.tags[2]">{{tag.name}}</h2>
 </header>
 <section>
-    <p>
-            Poniedziałek. Pierwszy bieg w tym tygodniu, kontynuuję 35km na tydzień.
-            6 dni pod rząd bez dnia odpoczynku, zaczynam odczuwać zmęczenie.
-            Jutro dzień wolny od biegania. Zdecydowanie chciałbym też spróbować przebiec w tym tygodniu rekordowe 5km.
+    <p [innerHTML]="post.excerpt.rendered">
+           
                  
     </p>
     <span>Read more</span>
 </section>
 </div>
-<div class="post">
-        <header>
-            <h1>6K</h1>
-            <h2>41:14</h2>
-        </header>
-        <section>
-            <p>
-                   Ostatni bieg tygodnia, podsumowując przebiegłem ponad 37km w tym tygodniu,
-                   a więc nieco ponad 35km jakie miałem przebiec. Wczoraj impreza, ale jednak jakoś zmusiłem się do wyjścia 
-                   na zawnątrz. Od paru dni pogoda dopisuje, a więc biega się przyjemnie.
-                         
-            </p>
-            <span>Read more</span>
-        </section>
-        </div>
-        <div class="post">
-                <header>
-                    <h1>10K</h1>
-                    <h2>4:17</h2>
-                </header>
-                <section>
-                    <p>
-                            Sobotni długi bieg. Zawsze dłuższy dystansa biega mi się lepiej, głównym powodem jest pewnie monotonność krótszych biegów, które zawsze biegam 
-                            na tej samej trasie. Mając do przebiegnięcia 10km mogę ułożyć sobie ciekawszą trasę, i za każdym razem ją zmieniać.
-                    </p>
-                    <span>Read more</span>
-                </section>
-                </div>
                 <div class="post">
                         <header>
                             <h1>6K</h1>
