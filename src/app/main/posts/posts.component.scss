@@ -4,6 +4,8 @@
     font-family:Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 h1{
+    position:relative;
+    bottom:1.5em;
     font-family:'Graduate';
   font-size:1.3em;
   text-align:center;
@@ -11,6 +13,8 @@ h1{
   text-shadow: 0.05em 0.05em 0em rgba(145, 14, 5,0.4);
 }
 h2{
+    position:relative;
+    top:2.3em;
     font-family:'Graduate';
     font-size:1.1em;
     text-align:center;

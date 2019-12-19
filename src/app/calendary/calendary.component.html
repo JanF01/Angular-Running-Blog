@@ -1,7 +1,7 @@
 
 <!-- race, recov, day -->
 <main>
-  <div *ngFor="let post of this.posts$ | async; let y = index" routerLink="/view" routerLinkActive="true" class="day race">
+  <div *ngFor="let post of this.posts$ | async; let y = index" (click)="changeCurrent(y)" routerLink="/view" routerLinkActive="true" class="day race">
     <h1>{{ post.date[8]+post.date[9]}}</h1>
     <h2 *ngIf="post.date[5]==1 && post.date[6]==2">Grudzień</h2>
     <div class="info" *ngFor="let tag of this.tags$ | async; let i = index">

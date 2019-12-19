@@ -14,11 +14,11 @@ export class PostsComponent implements OnInit {
   tags: Observable<any>
 
   constructor(private wp: WordpressService) {
-     this.posts = this.wp.posts;
-     this.tags = this.wp.tags;
    }
 
   ngOnInit() {
+    this.posts = this.wp.posts;
+    this.tags = this.wp.tags;
   }
 
 }

@@ -24,5 +24,10 @@ export class CalendaryComponent implements OnInit {
   
 
   }
+  changeCurrent(which){
+    console.log(which);
+       this.wp.currentPostViewed = which;
+
+  }
 
 }

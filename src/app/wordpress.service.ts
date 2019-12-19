@@ -10,6 +10,7 @@ export class WordpressService {
 
   posts: Observable<any[]>;
   tags: Observable<any[]>;
+  currentPostViewed: number = 0;
 
   constructor(private http: HttpClient) { }
 

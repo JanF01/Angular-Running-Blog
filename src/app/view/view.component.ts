@@ -20,6 +20,12 @@ export class ViewComponent implements OnInit {
   ngOnInit() {
      this.posts = this.wp.posts;
      this.tags = this.wp.tags;
+
+
+
+     this.active = this.wp.currentPostViewed;
+
+     (<HTMLElement>document.getElementsByClassName("container")[0]).style.right="calc( 100% * "+this.active+" )";
   }
 
   goBack(){
@@ -28,7 +34,7 @@ export class ViewComponent implements OnInit {
   }
 
   changePost(b){
-     if(!b && this.active<=(<HTMLElement>document.getElementsByClassName("container")[0]).offsetWidth/document.body.offsetWidth){
+     if(!b && this.active<=(<HTMLElement>document.getElementsByClassName("container")[0]).offsetWidth/document.body.offsetWidth+1){
         this.active++;
      (<HTMLElement>document.getElementsByClassName("container")[0]).style.right="calc( 100% * "+this.active+" )";
      }
