@@ -11,14 +11,22 @@ import { Observable } from 'rxjs';
 export class PostsComponent implements OnInit {
   
   posts: Observable<any>;
-  tags: Observable<any>
+  tags: Observable<any>;
 
   constructor(private wp: WordpressService) {
+
    }
 
   ngOnInit() {
     this.posts = this.wp.posts;
-    this.tags = this.wp.tags;
+     this.wp.tags.subscribe(()=>{this.tags = this.wp.tags});
   }
+
+  changeCurrent(which){
+  
+       this.wp.currentPostViewed = which;
+
+  }
+
 
 }

@@ -4,47 +4,95 @@
    justify-content:center;
 
 }
+@mixin radius{
+    -ms-border-radius:0.14em;
+    -moz-border-radius:0.15em;
+    -webkit-border-radius:0.15em;
+    border-radius:0.15em;
+}
+
+
+.legend{
+
+
+  width:60%;
+  margin:0 auto;
+  position:fixed;
+  top:7em;
+  left:2.5rem;
+
+    .s{
+      display:flex;
+      font-size:0.9em;
+      align-items:center; 
+    }
+    .blue,.violet,.red,.orange,.green{
+        width:2em;
+        height:1.4em;
+        margin:0.6em;
+        margin-top:0.2em;
+        margin-bottom:0em;
+    }
+    .blue{
+        background:#253eb1;
+    }
+    .violet{
+        background:#5419b4;
+    }
+    .red{
+        background:#aa1212;
+    }
+    .orange{
+        background:#e0a119;
+    }
+    .green{
+        background:#64b91e;
+    }
+}
+
+
 
 main{
-    min-height:100vh;
+
     background:white;
      
-    padding:5% 15% 5% 15%;
+    padding:5% 16% 50% 16%;
+    
     flex-wrap:wrap;
     @include flex;
-    justify-content: flex-start;
+   
 }
 .day{
   min-width:6.6em;
   height:9em;
-  margin:2em;
-  background:linear-gradient(to top, #2513ca,#26098d);
-  box-shadow:0em 0.1em 0em 0.1em #120994;
+  margin:2.05em;
+  background:transparent;
+  //box-shadow:0em 0.1em 0em 0.1em #092294;
+  @include radius;
   color:white;
   font-family:"Lato";
   position:relative;
-  z-index:1;
+  z-index:20;
   .info{
       text-align:center;
       word-spacing:5em;
       padding-top:0.7em;
     // font-family:"Graduate";
       display:block;
-      position:absolute;
-      top:0;
-      left:0;
       min-width:100%;
       min-height:calc(100% - 0.7em);
-      background:transparent;
-      display:none;
+      margin-top:-120%;
+
       h1{
           font-size:1.8em;
           font-family:"Graduate";
+          color:rgba(255,255,255,0);
       }
       h2{
         font-size:1.1em;
         position:absolute;
         top:4em;
+         color:rgba(255,255,255,0);
       }
   }
   &:hover{
@@ -54,7 +102,13 @@ main{
           color:white;
           opacity:1;
           display:block;
-          animation:fadeIn 1 0.3s;
+   
+          h1{
+            color:rgba(255,255,255,1);
+        }
+        h2{
+            color:rgba(255,255,255,1);
+        }
       }
   }
 }
@@ -62,9 +116,11 @@ main{
 @keyframes fadeIn{
 0%{
     opacity:0;
+
 }
 100%{
     opacity:1;
+
 }
 
 }
@@ -74,8 +130,23 @@ main{
     box-shadow:0em 0.1em 0em 0.1em #a80606;
 }
 .recov{
-    background:linear-gradient(to top, #64b91e,#2c6902);
+    background:linear-gradient(to top, #64b91e,#2c6902) !important;
     box-shadow:0em 0.1em 0em 0.1em #058a05;
+}
+.normal{
+    background:linear-gradient(to top, #3c57d1,#132097) !important;
+    box-shadow:0em 0.1em 0em 0.1em #0e3892;
+}
+.long{
+    background:linear-gradient(to top, #c48e19,#7e590a) !important;
+    box-shadow:0em 0.1em 0em 0.1em #8f6407;
+}
+.normalh{
+    background:linear-gradient(to top, #703cd1,#461397) !important;
+    box-shadow:0em 0.1em 0em 0.1em #410e92;
+}
+.hide{
+display:none !important;
 }
 .day h1,.info h1{
     font-size:2.2em;

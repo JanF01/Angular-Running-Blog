@@ -7,7 +7,7 @@ h1>span{
     animation: blink infinite 0.9s; 
 }
 .label,.pb{
-    background:radial-gradient(#392de4,#ffffff 210%);
+  //  background:radial-gradient(#392de4,#ffffff 210%);
     width:40%;
     padding:0.6em 0em 0.6em 0em;
     text-align:center;
@@ -18,27 +18,34 @@ h1>span{
     position:relative;
 }
 .g{
-    background:radial-gradient(#68e072,#ffffff 210%);
+   // background:radial-gradient(#68e072,#ffffff 210%);
 }
 .y{
-    background:radial-gradient(#dee068,#ffffff 210%);
+   // background:radial-gradient(#dee068,#ffffff 210%);
 }
 .o{
-    background:radial-gradient(#e6a23d,#ffffff 210%);
+   // background:radial-gradient(#e6a23d,#ffffff 210%);
 }
 .r{
-    background:radial-gradient(#e6563d,#ffffff 210%);
+   // background:radial-gradient(#e6563d,#ffffff 210%);
 }
 .asi{
   position:absolute;
   right:7%;
-  top:28%;
+  top:15%;
   font-size:0.4em;
   width:6em;
-  height:100%;
+  padding:0.8em;
   text-align:center;
+  color:white;
+
+  background:#444444;
+  box-shadow:0.1em 0.1em 0.1em 0.1em black;
+  border-radius:0.2em;
+  transition:all 0.2s;
   &:hover{
     cursor:pointer;
+    transform:scale(0.96);
 }
 }
 @keyframes blink{
@@ -53,6 +60,17 @@ h1>span{
    }
 
 
+}
+.m{
+    font-size:1.2em;
+    margin-top:0.2em;
+}
+
+#ten,#five,#one,#four{
+   // display:none;
+}
+.ten{
+    display:none;
 }
 
 

@@ -1,6 +1,18 @@
-<h1>Kilometry w tym tygodniu: <span>37km</span></h1>
-<h1 class="label">Personal Best</h1>
-<div class="pb g">10km -> 40:45<div class="asi">Zobacz poprzednie</div></div>
-<div class="pb y">5km -> 19:52<div class="asi">Zobacz poprzednie</div></div>
-<div class="pb o">1.5km -> 4:49<div class="asi">Zobacz poprzednie</div></div>
-<div class="pb r">400m -> 0:58<div class="asi">Zobacz poprzednie</div></div>
+<h1>Kilometry w tym tygodniu: <span *ngIf="this.info | async as info">{{ info[0] }}</span></h1>
+<h1 class="label">Najlepsze Wyniki</h1>
+<div class="pb">10km -> <span *ngIf="this.wyniki | async as wyniki">{{ wyniki[0][0] }}</span><div class="asi" (click)="showScores('ten',$event,0)">Zobacz poprzednie</div></div>
+<ng-container *ngFor="let w of this.wyniki | async; let i = index;">
+        <span class="m ten" *ngFor="let czas of w"><span class="ten" *ngIf="i==0 && czas!=w[0]">10km -> {{ czas }}</span></span>
+</ng-container>
+<div class="pb">5km -> <span *ngIf="this.wyniki | async as wyniki">{{ wyniki[1][0] }}</span><div class="asi" (click)="showScores('five',$event,1)">Zobacz poprzednie</div></div>
+<ng-container *ngFor="let w of this.wyniki | async; let i = index;">
+    <span class="m five" id="five" *ngFor="let czas of w"><span class="five" *ngIf="i==1 && czas!=w[0]">5km -> {{ czas }}</span></span>
+</ng-container>
+<div class="pb">1.5km -> <span *ngIf="this.wyniki | async as wyniki">{{ wyniki[2][0] }}</span><div class="asi" (click)="showScores('one',$event,2)">Zobacz poprzednie</div></div>
+<ng-container *ngFor="let w of this.wyniki | async; let i = index;">
+    <span class="m one" id="one" *ngFor="let czas of w"><span class="one" *ngIf="i==2 && czas!=w[0]">1.5km -> {{ czas }}</span></span>
+</ng-container>
+<div class="pb">400m -> <span *ngIf="this.wyniki | async as wyniki">{{ wyniki[3][0] }}</span><div class="asi" (click)="showScores('four',$event,3)">Zobacz poprzednie</div></div>
+<ng-container *ngFor="let w of this.wyniki | async; let i = index;">
+    <span class="m four" id="four" *ngFor="let czas of w"><span class="four" *ngIf="i==3 && czas!=w[0]">400m -> {{ czas }}</span></span>
+</ng-container>

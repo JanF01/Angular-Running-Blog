@@ -13,19 +13,19 @@ export class ViewComponent implements OnInit {
    posts: Observable<any[]>;
    tags: Observable<any[]>;
    active: number = 0;
+   length: number;
   constructor(private wp: WordpressService){ 
       
   }
 
   ngOnInit() {
-     this.posts = this.wp.posts;
+     this.posts = this.wp.calendary;
      this.tags = this.wp.tags;
 
 
 
      this.active = this.wp.currentPostViewed;
-
-     (<HTMLElement>document.getElementsByClassName("container")[0]).style.right="calc( 100% * "+this.active+" )";
+     this.posts.subscribe((result) => {this.length = result.length});
   }
 
   goBack(){
@@ -34,13 +34,21 @@ export class ViewComponent implements OnInit {
   }
 
   changePost(b){
-     if(!b && this.active<=(<HTMLElement>document.getElementsByClassName("container")[0]).offsetWidth/document.body.offsetWidth+1){
+
+     if(!b && this.active<this.length-1){
+
+        
         this.active++;
-     (<HTMLElement>document.getElementsByClassName("container")[0]).style.right="calc( 100% * "+this.active+" )";
+    
+    
+ 
      }
      else if(b && this.active>0){
-        this.active--;
-     (<HTMLElement>document.getElementsByClassName("container")[0]).style.right="calc( 100% * "+this.active+" )";
+ 
+     
+         this.active--;
+     
+        
      }
   }
 }

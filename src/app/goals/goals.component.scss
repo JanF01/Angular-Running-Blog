@@ -20,13 +20,16 @@ main{
  }
 }
 
-h3{
+h3,.bottom,.addition{
+    color:white;
     font-size:0.7em;
     text-align:center;
      margin:0.9em 0.4em 0 0;
      font-weight:light;
 }
-
+h2{
+    font-size:1em;
+}
 .right,.left{
     position:absolute;
     right:1em;
@@ -68,7 +71,7 @@ h3{
 .bottom{
     position:absolute;
     top:90vh;
-    left:47.25%;
+    text-align:center;
     transition:all 0.2s;
     &:hover{
         cursor:pointer;
@@ -76,3 +79,10 @@ h3{
     }
 }
 
+.addition{
+    position:absolute;
+    top:60%;
+    font-size:0.85em;
+    font-family:'Roboto';
+    letter-spacing:0.03em;
+}

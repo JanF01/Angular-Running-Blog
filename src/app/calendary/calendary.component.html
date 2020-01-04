@@ -1,14 +1,24 @@
 
 <!-- race, recov, day -->
+<div class="legend">
+  <div class="s"><div class="blue"></div>Zwykły bieg</div>
+  <div class="s"><div class="violet"></div>Duży wysiłek</div>
+  <div class="s"><div class="orange"></div>Długi bieg</div>
+  <div class="s"><div class="green"></div>Bieg regeneracyjny</div>
+  <div class="s"><div class="red"></div>Wyścig</div>
+</div>
 <main>
-  <div *ngFor="let post of this.posts$ | async; let y = index" (click)="changeCurrent(y)" routerLink="/view" routerLinkActive="true" class="day race">
+  <div *ngFor="let post of this.posts$ | async; let y = index" (click)="changeCurrent(y)" routerLink="/view" routerLinkActive="true" class="day">
     <h1>{{ post.date[8]+post.date[9]}}</h1>
     <h2 *ngIf="post.date[5]==1 && post.date[6]==2">Grudzień</h2>
-    <div class="info" *ngFor="let tag of this.tags$ | async; let i = index">
-      <h1 *ngIf="tag.id==post.tags[1]">
-          {{tag.name}}KM
-        </h1>
-      <h2 *ngIf="i==y">Zobacz Post</h2>
+    <div class="info" *ngFor="let tag of this.tags$ | async; let i = index" [ngClass]="
+    {'recov': this.tag[4]=='recovery',
+     'long': this.tag[4]=='long',
+      'normal': this.tag[4]=='normal',
+       'normalh': this.tag[4]=='normalh',
+        'hide': y!=i }">
+      <h1 *ngIf="i==y">{{tag[1] + 'KM'}}</h1>
+      <h2>Zobacz Post</h2>
     </div>
   </div>
 

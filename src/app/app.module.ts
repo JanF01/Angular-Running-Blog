@@ -72,5 +72,10 @@ export class AppModule {
   constructor(private wp: WordpressService) { 
     this.wp.getPosts();
     this.wp.getTags();
+    this.wp.getInfo();
+    this.wp.getTimes();
+    this.wp.getGoals();
+    this.wp.getDoneGoals();
+    this.wp.getCalendary();
   }
 }

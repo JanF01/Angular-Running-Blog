@@ -1,6 +1,7 @@
 <main>
-<div class="goal">Przebiegnij <span>5KM</span> w <span>19:30</span></div>
-<div class="left"><img src="left" src="assets/arrow2.png"><h3>POPRZEDNI CEL</h3></div>
-<div class="right"><h3>NASTĘPNY CEL</h3> <img src="assets/arrow2.png"></div>
-<div class="bottom"><h3>OSIĄGNIĘTE CELE</h3></div>
+<div class="goal" *ngFor="let goal of this.goals | async; let y = index"><span *ngIf="y==this.activeGoal">{{this.goal[0]}}</span></div>
+<div class="left" (click)="prvGoal()"><img src="left" src="assets/arrow2.png"><h3>POPRZEDNI CEL</h3></div>
+<div class="right" (click)="nextGoal()"><h3>NASTĘPNY CEL</h3> <img src="assets/arrow2.png"></div>
+<div class="addition" *ngIf="!mode">{{this.descriptions[this.activeGoal]}}</div>
+<div class="bottom" (click)="switchMode()" id="switch"><h2>OSIĄGNIĘTE CELE</h2></div>
 </main>

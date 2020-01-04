@@ -13,7 +13,7 @@ export class CalendaryComponent implements OnInit {
   tags$: Observable<any[]>;
 
   constructor(private wp: WordpressService) {
-         this.posts$ = this.wp.posts;
+         this.posts$ = this.wp.calendary;
          this.tags$ = this.wp.tags;
    }
 
@@ -25,9 +25,9 @@ export class CalendaryComponent implements OnInit {
 
   }
   changeCurrent(which){
-    console.log(which);
+    
        this.wp.currentPostViewed = which;
-
+     
   }
 
 }
