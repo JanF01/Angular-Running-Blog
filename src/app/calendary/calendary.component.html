@@ -10,7 +10,19 @@
 <main>
   <div *ngFor="let post of this.posts$ | async; let y = index" (click)="changeCurrent(y)" routerLink="/view" routerLinkActive="true" class="day">
     <h1>{{ post.date[8]+post.date[9]}}</h1>
+    <h2 *ngIf="post.date[5]==0 && post.date[6]==1">Styczeń</h2>
+    <h2 *ngIf="post.date[5]==0 && post.date[6]==2">Luty</h2>
+    <h2 *ngIf="post.date[5]==0 && post.date[6]==3">Marzec</h2>
+    <h2 *ngIf="post.date[5]==0 && post.date[6]==4">Kwiecień</h2>
+    <h2 *ngIf="post.date[5]==0 && post.date[6]==5">Maj</h2>
+    <h2 *ngIf="post.date[5]==0 && post.date[6]==6">Czerwiec</h2>
+    <h2 *ngIf="post.date[5]==0 && post.date[6]==7">Lipiec</h2>
+    <h2 *ngIf="post.date[5]==0 && post.date[6]==8">Sierpień</h2>
+    <h2 *ngIf="post.date[5]==0 && post.date[6]==9">Wrzesień</h2>
+    <h2 *ngIf="post.date[5]==1 && post.date[6]==0">Październik</h2>
+    <h2 *ngIf="post.date[5]==1 && post.date[6]==1">Listopad</h2>
     <h2 *ngIf="post.date[5]==1 && post.date[6]==2">Grudzień</h2>
+
     <div class="info" *ngFor="let tag of this.tags$ | async; let i = index" [ngClass]="
     {'recov': this.tag[4]=='recovery',
      'long': this.tag[4]=='long',

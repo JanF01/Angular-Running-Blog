@@ -1,4 +1,4 @@
-<h1>Kilometry w tym tygodniu: <span *ngIf="this.info | async as info">{{ info[0] }}</span></h1>
+<h1>Kilometry w tym tygodniu: <span *ngIf="this.info | async as info">{{ info[0][0] }}</span></h1>
 <h1 class="label">Najlepsze Wyniki</h1>
 <div class="pb">10km -> <span *ngIf="this.wyniki | async as wyniki">{{ wyniki[0][0] }}</span><div class="asi" (click)="showScores('ten',$event,0)">Zobacz poprzednie</div></div>
 <ng-container *ngFor="let w of this.wyniki | async; let i = index;">

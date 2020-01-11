@@ -18,7 +18,7 @@ export class WordpressService {
   postTags: any = [];
   tags: Observable<any[]>;
   goals: Observable<any[]>;
-  times: Observable<any[]>
+  times: Observable<any[]>;
   doneGoals: Observable<any[]>;
   information: Observable<any[]>;
   currentPostViewed: number = 0;

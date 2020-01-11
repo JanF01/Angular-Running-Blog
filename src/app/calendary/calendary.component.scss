@@ -63,9 +63,9 @@ main{
    
 }
 .day{
-  min-width:6.6em;
-  height:9em;
-  margin:2.05em;
+  min-width:7.8em;
+  height:10.5em;
+  margin:2em;
   background:transparent;
   //box-shadow:0em 0.1em 0em 0.1em #092294;
   @include radius;
@@ -75,13 +75,13 @@ main{
   z-index:20;
   .info{
       text-align:center;
-      word-spacing:5em;
-      padding-top:0.7em;
+      word-spacing:3em;
+      padding-top:1.2em;
     // font-family:"Graduate";
       display:block;
       min-width:100%;
       min-height:calc(100% - 0.7em);
-      margin-top:-120%;
+      margin-top:-110%;
 
       h1{
           font-size:1.8em;
@@ -89,9 +89,9 @@ main{
           color:rgba(255,255,255,0);
       }
       h2{
-        font-size:1.1em;
+        font-size:1em;
         position:absolute;
-        top:4em;
+        top:4.7em;
          color:rgba(255,255,255,0);
       }
   }
@@ -153,6 +153,6 @@ display:none !important;
     text-align:center;
 }
 .day h2,.info h2{
-    font-size:1.1em;
+    font-size:1.2em;
     text-align:center;
 }
