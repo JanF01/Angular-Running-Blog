@@ -1,0 +1,66 @@
+
+main{
+    display:flex;
+    
+
+.lista{
+    width:50%;
+    text-align:center;
+}
+.add{
+width:50%;
+align-items:center;
+display:flex;
+flex-direction:column;
+select{
+    margin-top:2em;
+}
+div{
+  margin:2em 20% 0 0;  
+  font-family:"Lato", monospace;
+}
+
+$char-w: 1ch;
+$gap: .5*$char-w;
+$n-char: 11;
+$in-w: $n-char*($char-w + $gap);
+
+input {
+    margin:2em 20% 0 0;
+	display: block;
+	border: none;
+	padding: 0;
+	width: $in-w;
+	background: repeating-linear-gradient(90deg, 
+		dimgrey 0, dimgrey $char-w, 
+		transparent 0, transparent $char-w + $gap) 
+		0 100%/ #{$in-w - $gap} 2px no-repeat;
+	font: 3ch droid sans mono, consolas, monospace;
+	letter-spacing: $gap;
+	
+	&:focus {
+		outline: none;
+		color: dodgerblue;
+	}
+}
+button{
+    margin:4em 20% 0 0; 
+}
+}
+
+select{
+    margin-right:20%;
+    border:none;
+    background:#3465cf;
+    color:white;
+    padding:0.3em 0.8em 0.3em 0.8em;
+    border-radius:0.4em;
+}
+span{
+    font-family:"Graduate",monospace;
+    font-size:1.3em;
+    display:block;
+    margin-top:1em;
+}
+
+}

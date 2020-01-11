@@ -1,0 +1,23 @@
+header{
+  font-family:"Roboto",monospace;
+  font-size:0.9em;
+  width:100%;
+  height:3.5em;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  background:linear-gradient(to right, #052fe4,#041faf);
+}
+ul{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    list-style-type:none;
+}
+li{
+    font-family:'Roboto';
+    margin-left:1.5em;
+    margin-right:5em;
+    cursor:pointer;
+}

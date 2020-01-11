@@ -1,0 +1,28 @@
+<p>Edytuj i dodawaj informacje na temat biegów</p>
+<main>
+<div class="lista">
+  <div class="poston" *ngFor="let post of this.posts | async">
+      <div class="post">
+      <h2>{{post.title.rendered}}</h2>
+      <h2>{{post.date_gmt | date}}</h2>
+      <h2>{{post.id}}</h2>
+    </div>
+      <div class="edit" (click)="getTags(post.id)">Edytuj tagi</div>
+  </div>
+</div>
+<div class="tagi" *ngFor="let tags of this.tags | async">
+    <input type="text" id="id" placeholder="dystans" *ngIf="tags[0]==this.currentId" value="{{tags[0]}}">
+    <input type="text" id="dystans" placeholder="dystans" *ngIf="tags[0]==this.currentId" value="{{tags[1]}}">
+    <input type="text" id="wysilek" placeholder="wysiłek" *ngIf="tags[0]==this.currentId" value="{{tags[2]}}">
+    <input type="text" id="czas" placeholder="czas" *ngIf="tags[0]==this.currentId" value="{{tags[3]}}">
+    <select id="typ" *ngIf="tags[0]==this.currentId">
+        <option value="recovery">Bieg regeneracyjny</option>
+        <option value="race">Wyścig</option>
+        <option value="normal">Zwykły bieg</option>
+        <option value="normalh">Duży wysiłek</option>
+        <option value="long">Długi bieg</option>
+    </select>
+    <button *ngIf="tags[0]==this.currentId" (click)="editTags();">Zapisz edycję</button>
+    <button *ngIf="tags[0]==this.currentId" (click)="postTags();">Dodaj tagi</button>
+  </div>
+</main>

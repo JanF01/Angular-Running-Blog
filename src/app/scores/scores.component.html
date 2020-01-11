@@ -1,0 +1,46 @@
+<p>Dodawaj swoje najlepsze czasy</p>
+<main>
+<div class="lista">
+  <select (change)="onChange($event.target.value)">
+      <option value="0">
+         10 KM
+      </option>
+      <option value="1">
+        5 KM
+     </option>
+     <option value="2">
+        1500 m
+     </option>
+     <option value="3">
+        400 m
+     </option>
+  </select>
+<section *ngFor="let speqtrum of this.times | async; let i = index">
+    <span *ngFor="let time of speqtrum"><span *ngIf="i==this.distance">{{time}}</span></span>
+</section>
+</div>
+<div class="add">
+    <select id="distance">
+        <option value="0">
+           10 KM
+        </option>
+        <option value="1">
+          5 KM
+       </option>
+       <option value="2">
+          1500 m
+       </option>
+       <option value="3">
+          400 m
+       </option>
+    </select>
+    <select id="post" (change)="showTitle($event.target.value)">
+        <option *ngFor="let post of this.posts | async" value="{{post.id + ' ' + post.title.rendered}}">
+           {{post.date_gmt | date}}
+        </option>
+    </select>
+    <div id="title"></div>
+    <input type="text" id="czas" placeholder="czas">
+    <button (click)="sendTime()">Dodaj wynik</button>
+</div>
+</main>

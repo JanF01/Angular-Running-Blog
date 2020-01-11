@@ -1,0 +1,27 @@
+<p>Dodaj, edytuj swoje aktualne cele lub oznacz jako ukończone</p>
+<main>
+<div class="lista">
+   <section *ngFor="let cel of this.goals | async">
+      <h2>{{ cel[0] }}</h2>
+      <h3>Nie wykonany</h3>
+      <h3 (click)="edit(cel[0],cel[1])">Edytuj opis</h3>
+   </section>
+   <section *ngFor="let cel of this.doneGoals | async">
+    <h2>{{ cel[0] }}</h2>
+    <h3>Wykonany</h3>
+    <h3 (click)="edit(cel[0],cel[1])">Edytuj opis</h3>
+  </section>
+
+
+
+</div>
+<div class="edycja">
+    <h4>Wybierz cel do edycji lub dodaj nowy</h4>
+   <textarea id="title" placeholder="Nazwa celu"></textarea>
+   <textarea id="additions" placeholder="Dodatkowe informacje"></textarea>
+   <div class="group">
+   <button (click)="save()">Zapisz zmiany</button>
+   <button>Dodaj cel</button>
+   </div>
+</div>
+</main>
